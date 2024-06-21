@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="full-container">
+        <div class="back">
+            <h1>Face Recognition Results</h1>
+            <button class="back-btn" onclick="goBack()">Back</button>
+        </div>
+        <div class="container">
+            {% if match_found %}
+            {% if matched_image %}
+            <div class="result-section">
+                <h3>Input Image:</h3>
+                <img src="{{ url_for('send_matched_file', filename='matched_image.jpg') }}" alt="Matched Image" class="result-image">
+            </div>
+            {% endif %}
+            {% if matched_frame %}
+            <div class="result-section">
+                <h3>Matched Frame:</h3>
+                <img src="{{ url_for('send_matched_file', filename='matched_frame.jpg') }}" alt="Matched Frame" class="result-image">
+            </div>
+            {% endif %}
+            {% else %}
+            <p>No match found</p>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.location.href = "{{ url_for('face_recognition_page') }}";
+        }
+    </script>
+</body>
+
+</html>

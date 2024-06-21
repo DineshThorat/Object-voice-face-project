@@ -1,0 +1,11 @@
+opencv-python
+pillow
+torch
+torchvision
+yolov5
+face_recognition
+scikit-learn
+numpy
+librosa
+soundfile
+flask

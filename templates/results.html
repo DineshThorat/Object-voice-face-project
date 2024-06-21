@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="goBack()">Back</button>
+        <h1>Detection Results</h1>
+    </div>
+    {% for frame_data in frames_data %}
+    <h2>{{ frame_data.frame }}</h2>
+    <ul>
+        {% for count in frame_data.object_counts %}
+        <li>{{ count }}</li>
+        {% endfor %}
+    </ul>
+    <div class="frame-objects">
+        {% for obj in frame_data.objects %}
+        <div class="object">
+            <img src="{{ url_for('static', filename='detected_objects/' ~ obj) }}" alt="Detected Object">
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <script>
+        function goBack() {
+            window.location.href = "{{ url_for('index') }}";
+        }
+    </script>
+</body>
+
+</html>

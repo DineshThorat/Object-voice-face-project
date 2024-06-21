@@ -1,0 +1,90 @@
+/* output.css */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  color: #f0f0f0;
+}
+
+.full-container {
+  text-align: center;
+  background: #1b2b40;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  /* overflow-y: auto; Enable vertical scrolling */
+  max-height: 90vh; /* Adjust as needed to fit within the viewport */
+  width: 80%;
+}
+
+.back {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between; /* Space between for aligning items */
+  align-items: center;
+  position: relative;
+}
+
+h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  font-weight: bold;
+  flex-grow: 1; /* Allow h1 to take available space */
+  text-align: center; /* Center text inside flex-grow area */
+}
+
+.container {
+  padding: 20px;
+}
+
+.result-section {
+  margin-bottom: 20px;
+}
+
+.result-section h3 {
+  margin: 10px 0;
+}
+
+.result-image {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 3px solid #ff416c;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.back-btn {
+  background: #1e90ff; /* Different color for the back button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #1c75d8;
+}
+
+/* Text Pop Animation */
+@keyframes textPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

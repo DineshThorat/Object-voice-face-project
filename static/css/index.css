@@ -1,0 +1,137 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #000307);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title-box {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 215, 0, 0.2));
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+  border: 3px solid #ffd700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.8);
+}
+
+h1 {
+  font-size: 3.5em;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  position: relative;
+  width: 220px;
+  height: 220px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 3px solid #ffd700;
+}
+
+.card:hover {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+  transform: scale(1.15) rotate(7deg);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.8);
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: url('ai-logo.png') no-repeat center;
+  background-size: contain;
+  z-index: -1;
+  opacity: 0.6;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover::before {
+  transform: translate(-50%, -50%) scale(1.3);
+  opacity: 1;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+}
+
+.card-content h2 {
+  font-size: 1.7em;
+  margin: 0 0 10px;
+  color: #ffd700;
+  text-transform: uppercase;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.card-content p {
+  font-size: 1em;
+  margin: 0;
+  color: #fff;
+}
+
+.card a:hover .card-content h2 {
+  color: #ff4500;
+  text-shadow: 3px 3px 12px rgba(255, 69, 0, 0.8);
+}
+
+

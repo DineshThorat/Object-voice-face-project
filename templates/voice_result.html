@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/voice_result.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="full-container">
+        <div class="container">
+            <h1>Voice Match Result</h1>
+            <div class="result-box">
+                {% if matched_file %}
+                <p>The matched voice file is: <span class="matched-file">{{ matched_file }}</span></p>
+                {% else %}
+                <p>No matching voice found.</p>
+                {% endif %}
+            </div>
+            <a href="{{ url_for('voice_recognition') }}" class="back-btn">Try another file</a>
+        </div>
+    </div>
+</body>
+
+</html>

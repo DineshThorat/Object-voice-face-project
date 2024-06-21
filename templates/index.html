@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-box">
+            <h1>Welcome to our site !!<br><span>Choose an Option</span></h1>
+        </div>
+        <ul class="card-list">
+            <li>
+                <div class="card">
+                    <a href="{{ url_for('object_detection') }}">
+                        <div class="card-content">
+                            <h2>Object Detection</h2>
+                            <p>Detect and classify objects in images.</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <a href="{{ url_for('voice_recognition') }}">
+                        <div class="card-content">
+                            <h2>Voice Recognition</h2>
+                            <p>Recognize and transcribe speech.</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <a href="{{ url_for('face_recognition_page') }}">
+                        <div class="card-content">
+                            <h2>Face Recognition</h2>
+                            <p>Identify and verify faces in images & videos.</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <a href="http://localhost:5173/">
+                        <div class="card-content">
+                            <h2>Google Search</h2>
+                            <p>Search an image to gain output as Google-lens.</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
